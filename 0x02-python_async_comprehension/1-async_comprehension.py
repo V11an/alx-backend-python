@@ -1,26 +1,14 @@
 #!/usr/bin/env python3
+'''Task_1 module.
+'''
+from typing import List
+from importlib import import_module as using
 
-import asyncio
-from random import randint  # Import for generating random numbers
+
+async_generator = using('0-async_generator').async_generator
 
 
-async def async_generator():
-    """
-    Asynchronous generator that yields random numbers 10 times with 1 second delay.
-
-    Yields:
-        int: A random integer between 0 and 10 (inclusive).
-    """
-    for _ in range(10):
-        await asyncio.sleep(1)
-        yield randint(0, 10)
-
-async def async_comprehension():
-    """
-    Asynchronous coroutine that collects 10 random numbers using async comprehension.
-
-    Returns:
-        list[int]: A list of 10 random integers between 0 and 10 (inclusive).
-    """
-    return [async_number async for async_number in async_generator()]
-
+async def async_comprehension() -> List[float]:
+    '''Create a list of 10 numbers from 10-number generator.
+    '''
+    return [num async for num in async_generator()]
