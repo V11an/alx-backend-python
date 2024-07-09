@@ -3,6 +3,7 @@
 import asyncio
 import random
 
+
 async def async_generator():
     """
     Asynchronous generator that yields random numbers 10 times with 1 second delay.
